@@ -31,6 +31,7 @@
   animation: block 1s infinite linear;
 }
 /*Keyframes*/
+/*Gør så "forhindringen" kommer flyvende imod karakteren fra venstre mod højre side*/
 @keyframes block {
   0% {
     left: 480px;
@@ -39,6 +40,7 @@
     left: -40px;
   }
 }
+/*lav en jump animation*/
 @keyframes jump {
   0% {
     top: 150px;
