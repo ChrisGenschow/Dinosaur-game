@@ -1,5 +1,7 @@
-let character = document.getElementsByClassName("character");
-let block = document.getElementsByClassName("block");
+let game = document.querySelector("game");
+let character = document.querySelector("character");
+let block = document.querySelector("block");
+console.log;
 /*Create jump function*/
 function jump() {
   /*Tilføj Jump class fra css til character elementet*/
