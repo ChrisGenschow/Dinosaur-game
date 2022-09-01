@@ -12,7 +12,6 @@
 .character {
   width: 170px;
   height: 118px;
-  background-color: none;
   position: relative;
   top: 160px;
   /* Background image from: https://www.gameart2d.com/free-dino-sprites.html */
@@ -27,13 +26,16 @@
 }
 
 .block {
-  width: 20px;
-  height: 20px;
-  background-color: blue;
+  width: 75px;
+  height: 51px;
   position: relative;
-  top: 130px;
+  top: 100px;
   left: 480px;
   animation: block 1s infinite linear;
+  /* background from https://www.cleanpng.com/png-flappy-bird-sprite-clip-art-flying-bird-1199732/ */
+  background-image:url('assets/bird.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 /*Keyframes*/
 /*Gør så "forhindringen" kommer flyvende imod karakteren fra venstre mod højre side*/
