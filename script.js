@@ -4,7 +4,7 @@ let block = document.querySelector(".block");
 console.log;
 
 // Eventlisteners
-document.addEventListener('keyup', event => {
+document.addEventListener('keydown', event => {
   //console.log("keyevent triggered",event);
   if (event.code === 'Space') {
     console.log('Space pressed');
