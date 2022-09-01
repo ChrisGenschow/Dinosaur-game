@@ -13,27 +13,27 @@
   width: 170px;
   height: 118px;
   position: relative;
-  top: 160px;
+  top: 92px;
   /* Background image from: https://www.gameart2d.com/free-dino-sprites.html */
-  background-image:url('assets/Idle.png');
+  background-image: url("assets/Idle.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .character.animate {
   animation: jump 500ms;
-  background-image: url('assets/Jump.png');
+  background-image: url("assets/Jump.png");
 }
 
 .block {
   width: 75px;
   height: 51px;
   position: relative;
-  top: 100px;
+  top: 34px;
   left: 480px;
   animation: block 1s infinite linear;
   /* background from https://www.cleanpng.com/png-flappy-bird-sprite-clip-art-flying-bird-1199732/ */
-  background-image:url('assets/bird.png');
+  background-image: url("assets/bird.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -50,15 +50,15 @@
 /*lav en jump animation*/
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 92px;
   }
   30% {
-    top: 100px;
+    top: 42px;
   }
   70% {
-    top: 100px;
+    top: 42px;
   }
   100% {
-    top: 150px;
+    top: 92px;
   }
 }
