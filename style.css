@@ -10,15 +10,20 @@
 }
 
 .character {
-  width: 20px;
-  height: 50px;
-  background-color: red;
+  width: 170px;
+  height: 118px;
+  background-color: none;
   position: relative;
-  top: 150px;
+  top: 160px;
+  /* Background image from: https://www.gameart2d.com/free-dino-sprites.html */
+  background-image:url('assets/Idle.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.animate {
+.character.animate {
   animation: jump 500ms;
+  background-image: url('assets/Jump.png');
 }
 
 .block {
