@@ -5,7 +5,7 @@ console.log;
 
 // Eventlisteners
 document.addEventListener('keyup', event => {
-  console.log("keyevent triggered",event);
+  //console.log("keyevent triggered",event);
   if (event.code === 'Space') {
     console.log('Space pressed');
     jump();
