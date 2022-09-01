@@ -2,63 +2,64 @@
   padding: 0;
   margin: 0;
 }
-/*Define the size of the game box, and add border, so it actually becomes a box*/
+body {
+  background-color: black;
+}
 .game {
+  margin: auto;
+  top: 700px;
+  position: relative;
   width: 500px;
-  height: 200px;
-  border: 1px solid black;
+  height: 500px;
+  background-color: black;
+  border: 60px solid white;
 }
 
 .character {
-  width: 170px;
-  height: 118px;
+  width: 64px;
+  height: 60px;
   position: relative;
-  top: 94px;
-  /* Background image from: https://www.gameart2d.com/free-dino-sprites.html */
-  background-image: url("assets/Idle.png");
+  top: 436px;
+
+  background-image: url("assets/player-character.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .character.animate {
-  animation: jump 500ms;
-  background-image: url("assets/Jump.png");
+  animation: jump 700ms;
 }
 
 .block {
-  width: 75px;
-  height: 51px;
+  width: 60px;
+  height: 156px;
   position: relative;
-  top: 34px;
+  top: 284px;
   left: 480px;
-  animation: block 1s infinite linear;
-  /* background from https://www.cleanpng.com/png-flappy-bird-sprite-clip-art-flying-bird-1199732/ */
-  background-image: url("assets/bird.png");
+  animation: block 800ms infinite linear;
+  background-image: url("assets/bone-block.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/*Keyframes*/
-/*Gør så "forhindringen" kommer flyvende imod karakteren fra venstre mod højre side*/
+
 @keyframes block {
   0% {
     left: 480px;
   }
   100% {
-    left: -40px;
+    left: -70px;
   }
 }
-/*lav en jump animation*/
 @keyframes jump {
   0% {
-    top: 94px;
+    top: 436px;
   }
-  30% {
-    top: 42px;
+  33% {
+    top: 250px;
   }
-  70% {
-    top: 42px;
+  66% {
+    top: 250px;
   }
   100% {
-    top: 94px;
+    top: 436px;
   }
 }
