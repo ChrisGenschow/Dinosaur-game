@@ -1,16 +1,26 @@
 * {
-  padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
 body {
+  padding: 0;
+  margin: 0;
   background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
 }
 .game {
   margin: auto;
-  top: 700px;
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background-color: black;
   border: 60px solid white;
 }
@@ -19,7 +29,7 @@ body {
   width: 64px;
   height: 60px;
   position: relative;
-  top: 436px;
+  top: 404px;
 
   background-image: url("assets/player-character.png");
   background-repeat: no-repeat;
@@ -49,6 +59,18 @@ body {
   font-size: 6vmin;
 }
 
+.start-screen {
+  position: absolute;
+  font-size: 5vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.white-text {
+  color: white;
+}
+
 .hide {
   display: none;
 }
@@ -58,12 +80,12 @@ body {
     left: 480px;
   }
   100% {
-    left: -70px;
+    left: -110px;
   }
 }
 @keyframes jump {
   0% {
-    top: 436px;
+    top: 404px;
   }
   33% {
     top: 250px;
@@ -72,6 +94,6 @@ body {
     top: 250px;
   }
   100% {
-    top: 436px;
+    top: 404px;
   }
 }
