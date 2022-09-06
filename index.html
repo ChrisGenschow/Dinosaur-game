@@ -11,13 +11,16 @@
 
   <body>
     <!--Lav en box, som indeholder spillet i main.-->
-    <card class="score white-text">0</card>
+    <div class="score white-text" data-score>0</div>
     <section class="world">
-        <section class="start-screen white-text">Press Any Key To Start</section>
-        <section class="game">
+      <section class="game">
+        <div class="start-screen white-text" data-start-screen>
+          Press Any Key To Start
+        </div>
         <!--Tilføj karakter og forhindring til spillet-->
-        <figure class="character"></figure>
+        <img src="assets/player-character.png" alt="" class="character" />
         <figure class="block"></figure>
+      </section>
     </section>
   </body>
   <script src="script.js" type="module"></script>
