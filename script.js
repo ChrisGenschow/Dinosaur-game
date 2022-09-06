@@ -6,11 +6,10 @@ console.log;
 // Eventlisteners
 document.addEventListener("keydown", (event) => {
   //console.log("keyevent triggered",event);
-  if (event.code === "Space" && !(character.classList.contains("animate")) ) {
+  if (event.code === "Space" && !character.classList.contains("animate")) {
     console.log("Space pressed");
     jump();
   }
-
 });
 
 /*Create jump function*/
@@ -22,7 +21,8 @@ function jump() {
   /*Fjern Jump class fra character efter et delay, så man kan hoppe igen*/
   setTimeout(function () {
     character.classList.remove("animate");
-  console.log("Space Pressed")}, 700);
+    console.log("Space Pressed");
+  }, 700);
 }
 
 let checkDead = setInterval(function () {
