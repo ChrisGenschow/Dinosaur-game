@@ -39,6 +39,7 @@ let checkDead = setInterval(function () {
   );
   if (blockLeft < 60 && blockLeft > 0 && characterTop >= 284) {
     block.style.animation = "none";
+    //I stedet for en alert så skal vi have lavet en "You died"-text, som skal komme frem lidt ligesom startScreenElem gør
     alert("You Died");
   }
 }, 10);
