@@ -7,15 +7,15 @@ const scoreElem = document.querySelector("[data-score]");
 const startScreenElem = document.querySelector("[data-start-screen]");
 
 // Eventlisteners
-document.addEventListener("keydown", handleStart, { once: true });
+
 document.addEventListener("keydown", (event) => {
   //console.log("keyevent triggered",event);
-  if (event.code === "Space" && !character.classList.contains("animate")) {
+  if (event.code === "Space" && !character.classList.contains("animate") && startScreenElem.classList.contains("hide")) {
     console.log("Space pressed");
     jump();
   }
 });
-
+document.addEventListener("keydown", handleStart, { once: true });
 /*Create jump function*/
 function jump() {
   /*Tilføj Jump class fra css til character elementet*/
@@ -30,7 +30,7 @@ function jump() {
 }
 //Check if your character has collided with the obstacle, if it has then alert the player, that they've died.
 
-/*let checkDead = setInterval(function () {
+let checkDead = setInterval(function () {
   let characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
   );
@@ -41,7 +41,7 @@ function jump() {
     block.style.animation = "none";
     alert("You Died");
   }
-}, 10);*/
+}, 10);
 
 /*This will be replaced at some point, so that the alert won't be a thing, but the gamebox, character and obstacle will all
 fade out, and you're left with a black screen.*/
@@ -80,5 +80,6 @@ function handleStart() {
   score = 0;
   speedScale = 1;
   startScreenElem.classList.add("hide");
+  block.classList.remove("hide");
   window.requestAnimationFrame(update);
 }

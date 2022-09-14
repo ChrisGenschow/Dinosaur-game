@@ -28,7 +28,7 @@ body {
 .character {
   width: 64px;
   height: 60px;
-  /*position: relative;
+  position: relative;
   top: 404px;
 
   background-image: url("assets/player-character.png");
@@ -36,10 +36,10 @@ body {
   background-size: contain;
 }
 .character.animate {
-  animation: jump 700ms;*/
+  animation: jump 700ms;
 }
 
-/*.block {
+.block {
   width: 60px;
   height: 156px;
   position: relative;
@@ -49,7 +49,7 @@ body {
   background-image: url("assets/bone-block.png");
   background-repeat: no-repeat;
   background-size: contain;
-}*/
+}
 
 .score {
   left: 1vmin;
@@ -75,14 +75,14 @@ body {
   display: none;
 }
 
-/*@keyframes block {
+@keyframes block {
   0% {
     left: 480px;
   }
   100% {
     left: -110px;
   }
-}*/
+}
 @keyframes jump {
   0% {
     top: 404px;
