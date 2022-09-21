@@ -37,7 +37,7 @@ let checkDead = setInterval(function () {
   let blockLeft = parseInt(
     window.getComputedStyle(block).getPropertyValue("left")
   );
-  if (blockLeft < 60 && blockLeft > 0 && characterTop >= 284) {
+  if (blockLeft < 60 && blockLeft > 0 && characterTop >= 325) {
     block.style.animation = "none";
     //I stedet for en alert så skal vi have lavet en "You died"-text, som skal komme frem lidt ligesom startScreenElem gør
     alert("You Died");
@@ -81,6 +81,7 @@ function handleStart() {
   score = 0;
   speedScale = 1;
   startScreenElem.classList.add("hide");
+  scoreElem.classList.remove("hide");
   block.classList.remove("hide");
   window.requestAnimationFrame(update);
 }

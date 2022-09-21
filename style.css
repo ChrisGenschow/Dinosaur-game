@@ -6,15 +6,28 @@ body {
   padding: 0;
   margin: 0;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+}
+
+.my-name {
+  position: relative;
 }
 
 .world {
   overflow: hidden;
   position: relative;
+  border: 20px solid white;
+  height: 600px;
+  width: 600px;
+  padding: 0;
+  margin: auto;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .game {
   margin: auto;
@@ -22,31 +35,30 @@ body {
   width: 600px;
   height: 600px;
   background-color: black;
-  border: 60px solid white;
 }
 
 .character {
   width: 64px;
   height: 60px;
   position: relative;
-  top: 404px;
+  top: 500px;
 
   background-image: url("assets/player-character.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
 .character.animate {
-  animation: jump 700ms;
+  animation: jump 800ms;
 }
 
 .block {
   width: 60px;
   height: 156px;
   position: relative;
-  top: 284px;
-  left: 480px;
+  top: 325px;
+  left: 500px;
   animation: block 800ms infinite linear;
-  background-image: url("assets/bone-block.png");
+  background-image: url("assets/Soda.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -77,23 +89,23 @@ body {
 
 @keyframes block {
   0% {
-    left: 480px;
+    left: 500px;
   }
   100% {
-    left: -110px;
+    left: -180px;
   }
 }
 @keyframes jump {
   0% {
-    top: 404px;
+    top: 500px;
   }
   33% {
-    top: 250px;
+    top: 300px;
   }
   66% {
-    top: 250px;
+    top: 300px;
   }
   100% {
-    top: 404px;
+    top: 500px;
   }
 }
