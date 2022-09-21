@@ -1,3 +1,6 @@
+import { updateCharacter, setupCharacter } from "./character.js";
+import { updateSoda, setupSoda } from "./soda.js";
+
 let game = document.querySelector(".game");
 let character = document.querySelector(".character");
 let block = document.querySelector(".block");
@@ -8,41 +11,45 @@ const startScreenElem = document.querySelector("[data-start-screen]");
 
 // Eventlisteners
 
-document.addEventListener("keydown", (event) => {
+/*document.addEventListener("keydown", (event) => {
   //console.log("keyevent triggered",event);
-  if (event.code === "Space" && !character.classList.contains("animate") && startScreenElem.classList.contains("hide")) {
+  if (
+    event.code === "Space" &&
+    !character.classList.contains("animate") &&
+    startScreenElem.classList.contains("hide")
+  ) {
     console.log("Space pressed");
     jump();
   }
-});
+});*/
 document.addEventListener("keydown", handleStart, { once: true });
 /*Create jump function*/
-function jump() {
-  /*Tilføj Jump class fra css til character elementet*/
+/*function jump() {
+  //Tilføj Jump class fra css til character elementet
   if (character.classList != "animate") {
     character.classList.add("animate");
   }
-  /*Fjern Jump class fra character efter et delay, så man kan hoppe igen*/
+  //Fjern Jump class fra character efter et delay, så man kan hoppe igen
   setTimeout(function () {
     character.classList.remove("animate");
     console.log("Space Pressed");
   }, 700);
-}
+}*/
 //Check if your character has collided with the obstacle, if it has then alert the player, that they've died.
 
-let checkDead = setInterval(function () {
+/*let checkDead = setInterval(function () {
   let characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
   );
   let blockLeft = parseInt(
     window.getComputedStyle(block).getPropertyValue("left")
   );
-  if (blockLeft < 60 && blockLeft > 0 && characterTop >= 325) {
+  if (blockLeft < 30 && blockLeft > 0 && characterTop >= 325) {
     block.style.animation = "none";
     //I stedet for en alert så skal vi have lavet en "You died"-text, som skal komme frem lidt ligesom startScreenElem gør
     alert("You Died");
   }
-}, 10);
+}, 10);*/
 
 /*This will be replaced at some point, so that the alert won't be a thing, but the gamebox, character and obstacle will all
 fade out, and you're left with a black screen.*/
@@ -61,6 +68,9 @@ function update(time) {
     return;
   }
   const delta = time - lastTime;
+
+  updateCharacter(delta, speedScale);
+  updateSoda(delta, speedScale);
   updateScore(delta);
   console.log(delta);
 
@@ -80,6 +90,8 @@ function handleStart() {
   lastTime = null;
   score = 0;
   speedScale = 1;
+  setupCharacter();
+  setupSoda();
   startScreenElem.classList.add("hide");
   scoreElem.classList.remove("hide");
   block.classList.remove("hide");
