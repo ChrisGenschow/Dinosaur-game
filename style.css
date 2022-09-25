@@ -31,17 +31,18 @@ header {
 }
 .game {
   margin: auto;
-  position: relative;
+  position: absolute;
   width: 600px;
   height: 600px;
   background-color: black;
+  border: 20px solid white;
 }
 
 .character {
-  width: 64px;
-  height: 60px;
-  position: relative;
-  top: 500px;
+  width: 10%;
+  position: absolute;
+  --bottom: 0;
+  bottom: calc(var(--bottom) * 1%);
 
   background-image: url("assets/player-character.png");
   background-repeat: no-repeat;
@@ -51,6 +52,14 @@ header {
   animation: jump 800ms;
 }
 
+.soda {
+  --left: 0;
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  width: 10%;
+  bottom: 0;
+}
+/*
 .block {
   width: 60px;
   height: 156px;
@@ -61,8 +70,7 @@ header {
   background-image: url("assets/Soda.png");
   background-repeat: no-repeat;
   background-size: contain;
-}
-
+}*/
 .score {
   left: 1vmin;
   top: 1vmin;

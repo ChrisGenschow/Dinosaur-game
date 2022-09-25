@@ -1,12 +1,12 @@
 import {
-  getCustomProperty,
   incrementCustomProperty,
   setCustomProperty,
+  getCustomProperty,
 } from "./updateCustomProperty.js";
 
 const characterElem = document.querySelector("[data-character]");
-const JUMP_SPEED = 0.45;
-const GRAVITY = 0.0015;
+const JUMP_SPEED = 0.5;
+const GRAVITY = 0.0019;
 
 let isJumping;
 let yVelocity;
