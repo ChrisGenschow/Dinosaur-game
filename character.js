@@ -5,8 +5,8 @@ import {
 } from "./updateCustomProperty.js";
 
 const characterElem = document.querySelector("[data-character]");
-const JUMP_SPEED = 0.5;
-const GRAVITY = 0.0019;
+const JUMP_SPEED = 0.65;
+const GRAVITY = 0.0025;
 
 let isJumping;
 let yVelocity;
@@ -14,6 +14,7 @@ let yVelocity;
 export function setupCharacter() {
   isJumping = false;
   yVelocity = 0;
+  characterElem.src = "assets/player-character.png";
   setCustomProperty(characterElem, "--bottom", 0);
   document.removeEventListener("keydown", onJump);
   document.addEventListener("keydown", onJump);
@@ -21,6 +22,14 @@ export function setupCharacter() {
 
 export function updateCharacter(delta, speedScale) {
   handleJump(delta);
+}
+
+export function getCharacterRectangles() {
+  return characterElem.getBoundingClientRect();
+}
+
+export function setCharacterDead() {
+  characterElem.src = "assets/player-character-broken.png";
 }
 
 function handleJump(delta) {

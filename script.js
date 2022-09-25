@@ -1,5 +1,10 @@
-import { updateCharacter, setupCharacter } from "./character.js";
-import { updateSoda, setupSoda } from "./soda.js";
+import {
+  updateCharacter,
+  setupCharacter,
+  getCharacterRectangles,
+  setCharacterDead,
+} from "./character.js";
+import { updateSoda, setupSoda, getSodaRectangles } from "./soda.js";
 
 let game = document.querySelector(".game");
 let character = document.querySelector(".character");
@@ -72,10 +77,27 @@ function update(time) {
   updateCharacter(delta, speedScale);
   updateSoda(delta, speedScale);
   updateScore(delta);
-  console.log(delta);
+  //console.log(delta);
+  if (checkDeath()) return handleLose();
 
   lastTime = time;
   window.requestAnimationFrame(update);
+}
+
+function checkDeath() {
+  const characterRectangle = getCharacterRectangles();
+  return getSodaRectangles().some((rect) =>
+    isCollision(rect, characterRectangle)
+  );
+}
+
+function isCollision(rect1, rect2) {
+  return (
+    rect1.left < rect2.right &&
+    rect1.top < rect2.bottom &&
+    rect1.right > rect2.left &&
+    rect1.bottom > rect2.top
+  );
 }
 //Make a function, which updates your score based on the amount of time played.
 function updateScore(delta) {
@@ -83,6 +105,13 @@ function updateScore(delta) {
   score += delta * 0.001;
   //Undgå decimaler.
   scoreElem.textContent = Math.floor(score);
+}
+function handleLose() {
+  setCharacterDead();
+  setTimeout(() => {
+    document.addEventListener("keydown", handleStart, { once: true });
+    startScreenElem.classList.remove("hide");
+  }, 100);
 }
 
 //Lav en function, så spillet begynder at køre, når man trykker på en knap.
