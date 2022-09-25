@@ -24,8 +24,10 @@ export function updateCharacter(delta, speedScale) {
 }
 
 function handleJump(delta) {
+  //*console.log("Function called: handleJump", isJumping);
   if (!isJumping) return;
 
+  console.log("isJumpin", isJumping);
   incrementCustomProperty(characterElem, "--bottom", yVelocity * delta);
 
   if (getCustomProperty(characterElem, "--bottom") <= 0) {

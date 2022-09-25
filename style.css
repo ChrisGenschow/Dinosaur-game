@@ -40,12 +40,14 @@ header {
 .character {
   width: 64px;
   height: 60px;
-  position: relative;
-  top: 500px;
-
+  position: absolute;
+  bottom: 40px;
+  transform: translateY(calc(var(--bottom) * -0.7vh));
+  transition: translateY 1s ease;
   background-image: url("assets/player-character.png");
   background-repeat: no-repeat;
   background-size: contain;
+
 }
 .character.animate {
   animation: jump 800ms;
