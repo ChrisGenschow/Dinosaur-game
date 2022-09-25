@@ -7,5 +7,6 @@ export function setCustomProperty(elem, prop, value) {
 }
 
 export function incrementCustomProperty(elem, prop, inc) {
+  //*console.log("Function called: IncrementCustomProperty", elem, prop, inc);
   setCustomProperty(elem, prop, getCustomProperty(elem, prop) + inc);
 }

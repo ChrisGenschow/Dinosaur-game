@@ -72,7 +72,7 @@ function update(time) {
   updateCharacter(delta, speedScale);
   updateSoda(delta, speedScale);
   updateScore(delta);
-  console.log(delta);
+  //*console.log(delta);
 
   lastTime = time;
   window.requestAnimationFrame(update);
